@@ -1,2 +1,2 @@
-#!/bish/bash
-chown -hR vincent:staff *./
+#!/bin/bash
+sudo chmod -hR vincent:staff *
