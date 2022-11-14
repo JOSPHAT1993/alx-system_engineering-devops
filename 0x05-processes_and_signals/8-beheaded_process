@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#killing a process which is unable to be killed
+
+pkill -9 -f "./7-highlander"
