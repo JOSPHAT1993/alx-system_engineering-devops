@@ -1,22 +1,10 @@
 #!/usr/bin/env bash
 #creates a file myscript.pid and loops infitnitely
 
-file=/var/run/myscript.pid
-
-function quit_finish{
-	sudo rm $file
-	exit
-}
-
-function fin_term {
-	echo 'I hate the kill command'
-	sudo rm $file
-	exit
-}
-trap fin_term SIGTERM
-trap quit_finish SIGQUIT
+trap "echo 'I hate the kill command'; rm /var/run/myscript.pid; exit" SIGTERM
+trap "rm /var/run/myscript.pid; exit" SIGQUIT
 trap "echo 'Y U no love me?!'" SIGINT
-sudo bash -c "echo '$$'>$file"
+echo $$ > /var/run/myscript.pid
 while ((1))
 do
 	echo "To infinity and beyond"
