@@ -2,4 +2,4 @@
 #Lists all current running processes.
 
 
-ps -axjf
+ps -axuf
