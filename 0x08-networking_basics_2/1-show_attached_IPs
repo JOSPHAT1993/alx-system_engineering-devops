@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#displays all active ip in a machine
+
+ip a | grep "scope" | grep -Po '(?<=inet )[\d.]+'
